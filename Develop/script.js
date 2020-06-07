@@ -6,6 +6,14 @@ var special = "!@#$%^&*()-+=_[]{};:?/><.,~`"
 
 // Functions
 // Write password to the #password input
+function password(l, characters) {
+  var pwd = '';
+  for (var i = 0; i < l; i++) {
+    pwd += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return pwd;
+}
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
