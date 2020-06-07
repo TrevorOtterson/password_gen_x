@@ -3,6 +3,7 @@ var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var lower = "abcdefghijklmnopqrstuvwxyz"
 var num = 1234567890
 var special = "!@#$%^&*()-+=_[]{};:?/><.,~`"
+var yourPass = ''
 
 // Functions
 // Write password to the #password input
@@ -21,12 +22,12 @@ function writePassword() {
 }
 
 // Random character generator
-function generate(passLength) {
-  for (var i = 0; i <= passLength; i++) {
-    var passGen = Math.floor(Math.random() * passUpper.length + passLower.length + passSpecial.length + passNum.length);
-    console.log(passGen);
-  }
-}
+// function generate(passLength) {
+//   for (var i = 0; i <= passLength; i++) {
+//     var passGen = Math.floor(Math.random() * passUpper.length + passLower.length + passSpecial.length + passNum.length);
+//     console.log(passGen);
+//   }
+// }
 
 // Password Length if / else statement
 var passLength = prompt('How many characters do you want your password to be? *Can only be between 8 and 128 characters.*')
@@ -40,31 +41,38 @@ else {
 // Upper case characters pass into password
 var passUpper = confirm("Would you like upper case characters in your password?");
 if (passUpper) {
-  generate(upper)
+  password(upper)
 };
 
 // Lower case characters pass into password
 var passLower = confirm("Would you like lower case characters in your password?");
 if (passLower) {
-  generate(lower)
+  password(lower)
 };
 
 // Special characters pass into password
 var passSpecial = confirm("Would you like special characters in your password?");
 if (passSpecial) {
-  generate(special)
+  password(special)
 };
 
 // Numbers pass into password
 var passNum = confirm("Would you like numbers in your password?");
 if (passNum) {
-  generate(num)
+  password(num)
 };
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", function(p) {
+  (passUpper.confirm) ? characters += upper : '';
+  (passLower.confirm) ? characters += lower : '';
+  (passNum.confirm) ? characters += num : '';
+  (passSpecial.confirm) ? characters += special : '';
+
+  yourPass.value = password(passLength.value, characters);
+});
 
 debugger
