@@ -8,7 +8,6 @@ var special = '!@#$%^&*()-+=_[]{};:?/><.,~`'
 // Write password to the #password input
 function password(l, characters) {
   var pwd = '';
-  //l = int(l)
   for (var i = 0; i < l; i++) {
     console.log(characters)
     pwd += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -16,8 +15,10 @@ function password(l, characters) {
   return pwd;
 }
 
+// Function to write password in text are and encapsulating all if / else statements.
 function writePassword(){
 var characterSet = ''
+
 // Password Length if / else statement
 var passLength = prompt('How many characters do you want your password to be? *Can only be between 8 and 128 characters.*')
 if (passLength >= 8 && (passLength <= 128)) {
@@ -48,11 +49,13 @@ if (passSpecial) {
 // Numbers pass into password
 var passNum = confirm('Would you like numbers in your password?');
 if (passNum) {
-  characterSet += passNum
+  characterSet += num
 };
 
+// Pulls password id from html
 document.getElementById ('password').value = password (passLength, characterSet);
 }
+
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 
