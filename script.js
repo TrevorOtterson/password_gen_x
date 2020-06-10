@@ -26,6 +26,7 @@ if (passLength >= 8 && (passLength <= 128)) {
 }
 else {
   alert('Password must be between 8 and 128 characters. Try again.');
+  return writePassword()
 }
 
 // Upper case characters pass into password
