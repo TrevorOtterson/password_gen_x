@@ -21,6 +21,6 @@ THEN the password is either displayed in an alert or written to the page
 ```
 
 # Website
-<img src="./images/project.jpg" alt="Project page screenshot" width="300"/>
+<img src="./images/project.jpg" alt="Project page screenshot" height="300" width="500"/>
 
 <a>https://trevorotterson.github.io/password_gen_x/</a>
